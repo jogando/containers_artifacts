@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tripviewer-deployment
+  namespace: frontend
+  labels:
+    app: tripinsights
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tripinsights
+  template:
+    metadata:
+      labels:
+        app: tripinsights
+    spec:
+      containers:
+      - name: tripviewer
+        image: registryhbr8656.azurecr.io/tripinsights/tripviewer:1.0
+        ports:
+        - containerPort: 80

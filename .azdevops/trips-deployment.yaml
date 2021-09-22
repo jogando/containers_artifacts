@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trips-deployment
+  namespace: backend
+  labels:
+    app: tripinsights
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tripinsights
+  template:
+    metadata:
+      labels:
+        app: tripinsights
+    spec:
+      containers:
+      - name: trips
+        image: registryhbr8656.azurecr.io/tripinsights/trips:latest
+        ports:
+        - containerPort: 80
