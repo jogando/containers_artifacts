@@ -20,6 +20,11 @@ spec:
         image: registryhbr8656.azurecr.io/tripinsights/tripviewer:1.0
         ports:
         - containerPort: 80
+      - env:
+        - name: TRIPS_API_ENDPOINT
+          value: "http://trips.backend.svc.cluster.local"
+        - name: USERPROFILE_API_ENDPOINT
+          value: "http://userprofile.backend.svc.cluster.local"
 ---
 apiVersion: v1
 kind: Service
