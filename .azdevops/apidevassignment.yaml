@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: apidev-user-binding
+  namespace: backend
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: Group
+  namespace: backend
+  name: e614b8a7-96bd-4811-83a9-1e3ddab370dc
+  apiGroup: rbac.authorization.k8s.io
+  
