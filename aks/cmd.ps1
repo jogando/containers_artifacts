@@ -1,0 +1,1 @@
+az aks create -g teamResources -n tripinsightsCluster --enable-aad --aad-admin-group-object-ids 4180a1fa-48a1-49d5-91dd-1df83c375d65
