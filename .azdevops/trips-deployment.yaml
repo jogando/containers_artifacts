@@ -23,6 +23,13 @@ spec:
               name: sql-secrets        
         ports:
         - containerPort: 80
+        env:
+          - name: OPENAPI_DOCS_URI 
+            value: "http://changeme"
+          - name: DEBUG_LOGGING 
+            value: "false"
+          - name: PORT
+            value: "80"
 ---
 apiVersion: v1
 kind: Service
