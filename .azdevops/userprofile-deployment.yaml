@@ -18,5 +18,8 @@ spec:
       containers:
       - name: userprofile
         image: registryhbr8656.azurecr.io/tripinsights/userprofile:latest
+        envFrom:
+          - secretRef: 
+              name: sql-secrets        
         ports:
         - containerPort: 80

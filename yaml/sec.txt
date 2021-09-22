@@ -1,0 +1,4 @@
+SQL_USER=sqladminhBr8656
+SQL_PASSWORD=dX4hj8Lh0
+SQL_SERVER=sqlserverhbr8656.database.windows.net
+SQL_DB=mydrivingDB

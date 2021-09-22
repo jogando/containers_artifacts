@@ -18,5 +18,8 @@ spec:
       containers:
       - name: user-java
         image: registryhbr8656.azurecr.io/tripinsights/user-java:latest
+        envFrom:
+          - secretRef: 
+              name: sql-secrets
         ports:
         - containerPort: 80

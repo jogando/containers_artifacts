@@ -18,5 +18,8 @@ spec:
       containers:
       - name: trips
         image: registryhbr8656.azurecr.io/tripinsights/trips:latest
+        envFrom:
+          - secretRef: 
+              name: sql-secrets        
         ports:
         - containerPort: 80
