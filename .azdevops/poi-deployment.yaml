@@ -17,10 +17,7 @@ spec:
     spec:
       containers:
       - name: poi
-        image: registryhbr8656.azurecr.io/tripinsights/poi:latest
-        envFrom:
-          - secretRef: 
-              name: sql-secrets              
+        image: registryhbr8656.azurecr.io/tripinsights/poi:latest           
         ports:
         - containerPort: 8080
         env:
@@ -30,6 +27,19 @@ spec:
           value: "8080"
         - name: ASPNETCORE_ENVIRONMENT
           value: "Development"
+        - name: CONFIG_FILES_PATH
+          value: "/secrets"
+        volumeMounts:
+          - name: secrets-store-inline
+            mountPath: "/secrets"
+            readOnly: true
+      volumes:
+      - name: secrets-store-inline
+        csi: 
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "trip-insights-vault"
 ---
 apiVersion: v1
 kind: Service
