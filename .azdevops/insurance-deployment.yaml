@@ -4,7 +4,7 @@ metadata:
   name: insurance-deployment
   labels:
     deploy: insurance
-  namespace: insurance
+  namespace: backend
 spec:
   replicas: 2
   selector:
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: insurance
-  namespace: insurance
+  namespace: backend
 spec:
   type: ClusterIP
   selector:
