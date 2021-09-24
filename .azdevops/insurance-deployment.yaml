@@ -19,6 +19,11 @@ spec:
       - image: registryhbr8656.azurecr.io/insurance:1.0
         imagePullPolicy: Always
         name: insurance
+        resources:
+          requests:
+            memory: "1Gi"
+          limits:
+            memory: "2Gi"
         ports:
         - containerPort: 8081
           name: http
