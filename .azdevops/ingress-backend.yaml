@@ -38,10 +38,10 @@ spec:
             name: userprofile
             port: 
               number: 80
-      - path: /prometheus
+      - path: /api/prometheus
         pathType: Prefix
         backend:
           service: 
             name: prometheus
             port: 
-              number: 9090
+              number: 80
